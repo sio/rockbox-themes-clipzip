@@ -1,0 +1,66 @@
+# Theme						Blu
+# Author					Toby Davies
+# Platform					Sansa Clip Zip (96x96)
+# Version					1.0
+# Last Updated				08/02/2010
+# License					CC-BY-SA 3.0 
+
+# Disable status bar
+%wd
+
+# Set background
+%X(blu-background.bmp)
+
+# Preload fonts
+%Fl(2,07-Fixed.fnt)
+#%Fl(3,06-Tiny.fnt)
+%Fl(4,nedore-8.fnt)
+
+# Preload images
+%xl(p,progress-bar.bmp,0,0)
+%xl(v,volume.bmp,0,0)
+%xl(r,ruler.bmp,0,0)
+
+%?mp<|%?C<%Vd(a)%?mv<%Vd(v)|%Vd(b)>|%Vd(c)%Vd(d)%Vd(e)%?mv<%Vd(v)|%Vd(f)>%Vd(g)>|%Vd(c)%Vd(d)%Vd(e)%?mv<%Vd(v)|%Vd(f)>%Vd(g)|%?C<%Vd(a)%?mv<%Vd(v)|%Vd(f)>|%Vd(c)%Vd(d)%Vd(e)%?mv<%Vd(v)|%Vd(f)>%Vd(g)>|%?C<%Vd(a)%?mv<%Vd(v)|%Vd(f)>|%Vd(c)%Vd(d)%Vd(e)%?mv<%Vd(v)|%Vd(f)>%Vd(g)>||||>
+
+# Album art
+%Vl(a,0,0,96,82,-)
+%Cl(0,0,96,96,c,t)
+%Cd
+
+# Song title (bottom)
+%Vl(b,0,87,96,8,4) %Vf(9b9b9b) %Vb(196cb0)
+%ac%s%?it<%it|%fn>
+
+# Song title (top)
+%Vl(c,0,23,96,8,4) %Vf(ffffff) %Vb(196cb0)
+%ac%s%?it<%it|%fn>
+
+# Artist/Album info
+%Vl(d,0,35,96,24,4) %Vf(ffffff) %Vb(196cb0)
+%ac%s%ia
+%ac%s%id
+%acTrack %pp/%pe
+
+# File info
+%Vl(e,8,71,80,8,2) %Vf(8cb0cb) %Vb(196cb0)
+%al%fc%ac%?fv<VBR|CBR>%ar%fbk
+
+# Time info
+%Vl(f,0,87,96,8,4) %Vf(9b9b9b) %Vb(196cb0)
+%ac%pc/%pt
+
+# Shuffle | Repeat mode
+%Vl(g,5,8,86,6,2) %Vf(8cb0cb) %Vb(196cb0)
+%al%?ps<SHUFFLE|>%ar%?mm<|REPEAT ALL|REPEAT ONE|REPEAT SHUFFLE|REPEAT A-B>
+
+#  Volume
+%Vl(v,0,85,96,11,-)
+%pv(0,0,96,11,slider,v,nofill,nobar,backdrop,r)
+
+# Progress bar
+%V(0,83,96,2,-)
+%pb(0,0,96,2,p)
+
+
+

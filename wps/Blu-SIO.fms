@@ -1,0 +1,65 @@
+# Theme						Blu
+# Author					Toby Davies
+# Platform					Sansa Clip Zip (96x96)
+# Version					1.0
+# Last Updated				08/02/2010
+# License					CC-BY-SA 3.0 
+
+# Disable default status bar
+%wd
+
+# Set background
+%X(blu-background.bmp)
+
+# Preload fonts
+%Fl(2,07-Fixed.fnt)
+#%Fl(3,06-Tiny.fnt)
+%Fl(4,14-Nimbus.fnt)
+%Fl(5,nedore-8.fnt)
+
+# Preload images
+%xl(V,signal.bmp,0,0,6)
+%xl(s,progress-bar.bmp,0,0)
+%xl(v,volume.bmp,0,0)
+%xl(r,ruler.bmp,0,0)
+%xl(p,playback-mode.bmp,0,0,9)
+%xl(b,battery.bmp,0,0,7)
+
+# Scan/Preset | Channel | Stereo/Mono
+%V(5,8,86,6,2) %Vf(8cb0cb) %Vb(196cb0)
+%?tm<SCAN|PRESET>%ac%?tm<|%Ti/%Tc>%ar%?ts<STEREO|MONO>
+
+# Current frequency
+%V(2,27,92,-,4) %Vf(ffffff) %Vb(196cb0)
+%ac%tf MHz
+
+# RDS data
+%V(2,43,92,-,5) %Vf(8cb2ce) %Vb(196cb0)
+%s%ac%?tt<%?ty<%ty|%?tm<|%Tn>>|Searching...>
+
+# Signal strength
+%V(33,54,30,14,2)
+%?tr<%xd(Va)|%xd(Vb)|%xd(Vc)|%xd(Vd)|%xd(Ve)|%xd(Vf)>
+
+# Tuner frequencies (only show on scan mode)
+%V(8,71,81,8,2) %Vf(8cb0cb) %Vb(196cb0)
+%?tm<%al%ta%ar%tb|>
+
+# Volume
+%?mv<%Vd(v)|%Vd(p)%Vd(b)>
+%Vl(v,0,85,96,11,-)
+%pv(0,0,96,11,slider,v,nofill,nobar,backdrop,r)
+
+# Progress bar
+%V(0,83,96,2,-)
+%?tm<%pb(0,0,96,2,s)|>
+
+# Playback mode
+%Vl(p,1,87,15,7,-)
+%?mp<%xd(p,1)|%xd(p,2)|%xd(p,3)|%xd(p,4)|%xd(p,5)|%xd(p,6)|%t(0.2)%xd(p,7);%t(0.2)%xd(p,6)|%xd(p,8)|%xd(p,9)>
+
+# Battery status
+%Vl(b,78,87,16,7,-)
+%?bp<%?bc<%t(0.1)%xd(b,3);%t(0.1)%xd(b,4);%t(0.1)%xd(b,5);%t(0.1)%xd(b,6);%t(0.1)%xd(b,7)|%xd(b,7)>|%?bl<%t(0.5)%xd(b,1);%t(0.5)%xd(b,2)|%xd(b,3)|%xd(b,4)|%xd(b,5)|%xd(b,6)|%xd(b,7)|%xd(b,7)>>
+
+

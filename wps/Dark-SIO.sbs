@@ -1,0 +1,41 @@
+# Theme						Blu
+# Author					Toby Davies
+# Platform					Sansa Clip Zip (96x96)
+# Version					1.0
+# Last Updated				08/02/2010
+# License					CC-BY-SA 3.0 
+
+# Disable default status bar
+%wd
+
+# Preload fonts
+#%Fl(2,07-Fixed.fnt)
+#%Fl(3,06-Tiny.fnt)
+%Fl(4,nedore-8.fnt)
+
+# Preload images
+%xl(v,volume.bmp,0,0)
+%xl(r,ruler.bmp,0,0)
+%xl(p,playback-mode.bmp,0,0,9)
+%xl(b,battery.bmp,0,0,7)
+
+# UI viewport
+%Vi(-,3,6,90,72,-)
+%LB
+
+# Volume
+%?mv<%Vd(v)|%Vd(clock)%Vd(p)%Vd(b)>
+%Vl(v,0,85,96,11,-)
+%pv(0,0,96,11,slider,v,nofill,nobar,backdrop,r)
+
+# Clock
+%Vl(clock,0,87,96,8,4) %Vf(9b9b9b) %Vb(000000)
+%ac%cH:%cM
+
+# Playback mode
+%Vl(p,1,87,15,7,-)
+%?mp<%xd(p,1)|%xd(p,2)|%xd(p,3)|%xd(p,4)|%xd(p,5)|%xd(p,6)|%t(0.2)%xd(p,7);%t(0.2)%xd(p,6)|%xd(p,8)|%xd(p,9)>
+
+# Battery status
+%Vl(b,78,87,16,7,-)
+%?bp<%?bc<%t(0.1)%xd(b,3);%t(0.1)%xd(b,4);%t(0.1)%xd(b,5);%t(0.1)%xd(b,6);%t(0.1)%xd(b,7)|%xd(b,7)>|%?bl<%t(0.5)%xd(b,1);%t(0.5)%xd(b,2)|%xd(b,3)|%xd(b,4)|%xd(b,5)|%xd(b,6)|%xd(b,7)|%xd(b,7)>>
